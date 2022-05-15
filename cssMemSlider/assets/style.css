@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap');
+body {
+    background-color: #003333;
+    font-size: 1.4em;
+    font-family: 'Roboto Flex', sans-serif;
+}
+.slider-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 55em;
+}
+.slider-wrapper_input {
+    display: none;
+}
+.sliders {
+    overflow: hidden;
+    border-radius: 0.6em;
+    max-width: 75%;  
+}
+.sliders_images {
+    display: flex;
+    transition: all 0.8s ease-in-out;
+}
+img {
+    width:100%;
+}
+.sliders-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.7em;
+    width: 75%;
+}
+.sliders-description_title {
+    height: 1.5em;
+    overflow: hidden;
+    padding-top: 0.2em;
+    margin-left: 0.4em;
+}
+div .cl {
+    color: white;
+    margin: 0;
+    opacity: 0; 
+}
+.buttons {
+    display: flex;
+}
+label {
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease 0s;
+}
+label:hover {
+    cursor: pointer;
+}
+label:active > .buttons_checkbox {
+    transform: scale(0.85);
+}
+.buttons_checkbox {
+    display: flex;
+    width: 0.6em;
+    height: 0.6em;
+    margin: 0.2em;
+    border-radius: 50%;
+    background-color: #71abff;
+    border: 0.1em solid #71abff;
+}
+label:hover .buttons_checkbox {
+    transition: all 0.4s;
+    background-color: white;
+    border-color: white;
+    box-shadow: 0.1em 0.1em 0.7em rgb(255 255 255 / 20%);
+}
+#slide-1:checked ~ .sliders-description .buttons label[for=slide-1] .buttons_checkbox,
+#slide-2:checked ~ .sliders-description .buttons label[for=slide-2] .buttons_checkbox,
+#slide-3:checked ~ .sliders-description .buttons label[for=slide-3] .buttons_checkbox,
+#slide-4:checked ~ .sliders-description .buttons label[for=slide-4] .buttons_checkbox,
+#slide-5:checked ~ .sliders-description .buttons label[for=slide-5] .buttons_checkbox,
+#slide-6:checked ~ .sliders-description .buttons label[for=slide-6] .buttons_checkbox
+{
+    background-color: transparent;
+    
+}
+#slide-1:checked ~ .sliders .sliders_images  {
+    transform: translateX(0);
+}
+#slide-2:checked ~ .sliders .sliders_images  {
+    transform: translateX(-100%);
+}
+#slide-3:checked ~ .sliders .sliders_images  {
+    transform: translateX(-200%);
+}
+#slide-4:checked ~ .sliders .sliders_images  {
+    transform: translateX(-300%);
+}
+#slide-5:checked ~ .sliders .sliders_images  {
+    transform: translateX(-400%);
+}
+#slide-6:checked ~ .sliders .sliders_images  {
+    transform: translateX(-500%);
+}
+#slide-1:checked ~ .sliders-description .sliders-description_title_text-1 {
+    transition: all 0.6s;
+    transform: translateY(0);
+    opacity: 1;
+}
+#slide-2:checked ~ .sliders-description .sliders-description_title_text-2 {
+    transition: all 0.6s;
+    transform: translateY(-100%);
+    opacity: 1;
+}
+#slide-3:checked ~ .sliders-description .sliders-description_title_text-3 {
+    transition: all 0.6s;
+    transform: translateY(-200%);
+    opacity: 1;
+}
+#slide-4:checked ~ .sliders-description .sliders-description_title_text-4 {
+    transition: all 0.6s;
+    transform: translateY(-300%);
+    opacity: 1;
+}
+#slide-5:checked ~ .sliders-description .sliders-description_title_text-5 {
+    transition: all 0.6s;
+    transform: translateY(-400%);
+    opacity: 1;
+}
+#slide-6:checked ~ .sliders-description .sliders-description_title_text-6 {
+    transition: all 0.6s;
+    transform: translateY(-500%);
+    opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+    .buttons {
+        order: -1;
+    }.sliders-description {
+        flex-direction: column;
+    }
+    .sliders-description_title {
+        align-self: flex-start;
+        height: 4em;
+        font-size: 0.7em;
+    }
+    label {
+        height: 2em;
+    }
+    .buttons_checkbox {
+        width: 0.6em;
+        height: 0.6em;
+        border: 0.1em solid #71abff;
+    }
+    
+} 
+@media (max-width: 375px) {
+    .sliders {
+        max-width: 88%;
+    }
+    .sliders-description {
+        width: 85%;
+    }
+    .sliders-description_title {
+        font-size: 0.6em;
+    }
+}
